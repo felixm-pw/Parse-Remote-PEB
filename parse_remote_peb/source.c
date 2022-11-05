@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdint.h>
 
-// Defining NtQueryInformationProcess struct
+// Manually defining NtQueryInformationProcess
 typedef NTSTATUS(NTAPI* _NtQueryInformationProcess)(
     IN	HANDLE              ProcessHandle,
     IN	PROCESSINFOCLASS    ProcessInformationClass,
     OUT	PVOID               ProcessInformation,
     IN	ULONG               ProcessInformationLength,
     OUT PULONG              ReturnLength OPTIONAL
-    );
+);
 _NtQueryInformationProcess NtQueryInfoProcess;
 
 int main() {
